@@ -1,0 +1,89 @@
+﻿<Window x:Class="MusicCast_Control_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCast_Control_WPF"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="MusicCast Control WPF" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid Background="Black" UseLayoutRounding="False">
+        <Label x:Name="powerLabel" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="Black" Foreground="White"/>
+        <Button x:Name="PowerOffButton" Content="          " HorizontalAlignment="Left" Margin="738,10,0,0" VerticalAlignment="Top" Foreground="White" Click="PowerOffButton_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/power.png" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Mutebutton" Content="          " HorizontalAlignment="Left" Margin="693,10,0,0" VerticalAlignment="Top" Foreground="White" Click="Mutebutton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/volmute.png" Stretch="Uniform" TileMode="None"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="AmpliNameLabel" Content="Label" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" MouseLeftButtonUp="AmpliNameLabel_MouseLeftButtonUp"/>
+        <Label x:Name="SoundDBLabel" Content="--.- BD" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Background="Black" Foreground="White"/>
+        <Button x:Name="VolDownButton" Content="          " HorizontalAlignment="Left" Margin="280,72,0,0" VerticalAlignment="Top" Foreground="White" Click="VolDownButton_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/voldown.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="VolUpButton" Content="          " HorizontalAlignment="Left" Margin="483,72,0,0" VerticalAlignment="Top" Foreground="White" Click="VolUpButton_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/volup.png"/>
+            </Button.Background>
+        </Button>
+        <ComboBox x:Name="InputList" HorizontalAlignment="Left" Margin="280,97,0,0" VerticalAlignment="Top" Width="120" Background="Black" SelectionChanged="InputList_SelectionChanged"/>
+        <ComboBox x:Name="SoundProgramList" HorizontalAlignment="Left" Margin="400,97,0,0" VerticalAlignment="Top" Width="120" Background="Black" SelectionChanged="SoundProgramList_SelectionChanged"/>
+        <Label x:Name="SoundFormatLabel" Content="Label" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Background="Black" Foreground="White"/>
+        <Label x:Name="IPLabel" Content="Label" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Background="Black" Foreground="White"/>
+        <Button x:Name="PureDirectbutton" Content="Pure Direct: False" HorizontalAlignment="Left" Margin="156,132,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="PureDirectbutton_Click"/>
+        <Button x:Name="EnhancerButton" Content="Pure Direct: False" HorizontalAlignment="Left" Margin="255,132,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="EnhancerButton_Click"/>
+        <Button x:Name="AdaptiveDrcButton" Content="Pure Direct: False" HorizontalAlignment="Center" Margin="0,132,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="AdaptiveDrcButton_Click"/>
+        <Button x:Name="ExtraBassButton" Content="Pure Direct: False" HorizontalAlignment="Left" Margin="451,132,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="ExtraBassButton_Click"/>
+        <Button x:Name="PureDirectbutton1" Content="???????????: False" HorizontalAlignment="Left" Margin="549,132,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="PureDirectbutton1_Click"/>
+        <Button x:Name="BassDown" Content="          " HorizontalAlignment="Left" Margin="25,237,0,0" VerticalAlignment="Top" Foreground="White" Click="BassDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/voldown.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BassUp" Content="          " HorizontalAlignment="Left" Margin="145,237,0,0" VerticalAlignment="Top" Foreground="White" Click="BassUp_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/volmute.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="dialDown" Content="          " HorizontalAlignment="Left" Margin="25,261,0,0" VerticalAlignment="Top" Foreground="White" Click="dialDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/voldown.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="DialUp" Content="          " HorizontalAlignment="Left" Margin="145,261,0,0" VerticalAlignment="Top" Foreground="White" Click="DialUp_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/volup.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ToneBassDown" Content="          " HorizontalAlignment="Left" Margin="25,324,0,0" VerticalAlignment="Top" Foreground="White" Click="ToneBassDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/voldown.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ToneBassUp" Content="          " HorizontalAlignment="Left" Margin="145,324,0,0" VerticalAlignment="Top" Foreground="White" Click="ToneBassUp_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/volup.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ToneTrebleDown" Content="          " HorizontalAlignment="Left" Margin="25,349,0,0" VerticalAlignment="Top" Foreground="White" Click="ToneTrebleDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/voldown.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="ToneTrebleUp" Content="          " HorizontalAlignment="Left" Margin="145,349,0,0" VerticalAlignment="Top" Foreground="White" Click="ToneTrebleUp_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/volup.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="tonecontrol" Content="Tone Control" HorizontalAlignment="Left" Margin="25,298,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
+        <Label x:Name="BassLabel" Content="Bass: 0" HorizontalAlignment="Left" Margin="80,234,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
+        <Label x:Name="ToneTrebleLabel" Content="Treble: 0" HorizontalAlignment="Left" Margin="80,346,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
+        <Label x:Name="ToneBassLabel" Content="Bass: 0" HorizontalAlignment="Left" Margin="80,321,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
+        <Label x:Name="DialogueLevelLabel" Content="Dial: 0" HorizontalAlignment="Left" Margin="80,258,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
+    </Grid>
+</Window>
