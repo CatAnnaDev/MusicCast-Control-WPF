@@ -149,13 +149,6 @@ public partial class MainWindow : Window
         }
     }
 
-    private async void updateVolume()
-    {
-        var statusjson = await zoneconfig.getStatus(ZoneConfig.zone.main);
-        var status = JsonNode.Parse(statusjson);
-        SoundDBLabel.Content = Convert.ToString(status["actual_volume"]["value"]) + " dB";
-    }
-
     private async void PowerOffButton_Click(object sender, RoutedEventArgs e)
     {
         await zoneconfig.setPower();
@@ -165,14 +158,13 @@ public partial class MainWindow : Window
     {
         if (!mute)
         {
-            var muteVol = await zoneconfig.setMute(true);
+            await zoneconfig.setMute(true);
             mute = true;
             SoundDBLabel.Content = "muted";
         }
         else
         {
-            var muteVol = await zoneconfig.setMute(false);
-            updateVolume();
+            await zoneconfig.setMute(false);
             mute = false;
         }
     }
@@ -183,10 +175,9 @@ public partial class MainWindow : Window
         {
             var setVol = Convert.ToInt32(curVol) + 1;
 
-            var incVol = await zoneconfig.setVolume(setVol);
+            await zoneconfig.setVolume(setVol);
             curVol = Convert.ToString(setVol);
             mute = false;
-            updateVolume();
         }
     }
 
@@ -196,10 +187,9 @@ public partial class MainWindow : Window
         {
             var setVol = Convert.ToInt32(curVol) - 1;
 
-            var incVol = await zoneconfig.setVolume(setVol);
+            await zoneconfig.setVolume(setVol);
             curVol = Convert.ToString(setVol);
             mute = false;
-            updateVolume();
         }
     }
 
