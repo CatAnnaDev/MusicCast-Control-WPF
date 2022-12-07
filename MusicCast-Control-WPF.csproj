@@ -6,6 +6,16 @@
     <RootNamespace>MusicCast_Control_WPF</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\mcc_icon.ico</ApplicationIcon>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +23,10 @@
     <None Remove="voldown.png" />
     <None Remove="volmute.png" />
     <None Remove="volup.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\mcc_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
