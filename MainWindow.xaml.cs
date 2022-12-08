@@ -1,4 +1,5 @@
 ﻿using MusicCast_Control_WPF.SaveLoadProfile;
+using System.Linq;
 using System.Windows.Input;
 
 namespace MusicCast_Control_WPF;
@@ -52,6 +53,7 @@ public partial class MainWindow : Window
             foreach (FileInfo file in Files)
             {
                 SavedProfile.Items.Add(file.Name);
+                SavedProfile.Text = SavedProfile.Items[0].ToString();
             }
         }
         else
