@@ -372,6 +372,8 @@ public partial class MainWindow : Window
 
     private async void Load_Click(object sender, RoutedEventArgs e)
     {
+        if (ProfileSelected == null)
+            ProfileSelected = "Profile1.json";
         string fileName = $"Profile/{ProfileSelected}";
         string jsonString = File.ReadAllText(fileName);
         var load = JsonConvert.DeserializeObject<SaveLoadTemplate>(jsonString);
