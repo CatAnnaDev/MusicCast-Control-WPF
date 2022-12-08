@@ -85,5 +85,8 @@
         <Label x:Name="ToneTrebleLabel" Content="Treble: 0" HorizontalAlignment="Left" Margin="80,346,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
         <Label x:Name="ToneBassLabel" Content="Bass: 0" HorizontalAlignment="Left" Margin="80,321,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
         <Label x:Name="DialogueLevelLabel" Content="Dial: 0" HorizontalAlignment="Left" Margin="80,258,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White"/>
+        <ComboBox x:Name="SavedProfile" HorizontalAlignment="Left" Margin="520,97,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="SavedProfile_SelectionChanged"/>
+        <Button x:Name="Save" Content="Save profile" HorizontalAlignment="Left" Margin="645,99,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="Save_Click"/>
+        <Button x:Name="Load" Content="Load Profile" HorizontalAlignment="Left" Margin="716,99,0,0" VerticalAlignment="Top" Background="Black" Foreground="White" Click="Load_Click"/>
     </Grid>
 </Window>
